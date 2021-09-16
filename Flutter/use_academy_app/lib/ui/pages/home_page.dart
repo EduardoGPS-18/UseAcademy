@@ -8,32 +8,46 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: SizedBox.expand(
-          child: Container(
-            color: Colors.blue,
+          child: SizedBox(
+            width: 64,
+            height: 64,
             child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Expanded(
-                  child: Container(
-                    color: Colors.green,
+                ElevatedButton(
+                  child: const Text("Elevated"),
+                  onPressed: () => debugPrint("Pressed"),
+                  onLongPress: () => debugPrint("Long press"),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                    onPrimary: Colors.green,
+                    padding: const EdgeInsets.symmetric(
+                      vertical: 16,
+                      horizontal: 32,
+                    ),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(32),
+                    ),
                   ),
                 ),
-                Flexible(
-                  flex: 2,
-                  fit: FlexFit.tight,
-                  child: Container(
-                    color: Colors.yellow,
-                    child: Text("Teste"),
-                  ),
+                OutlinedButton(
+                  onPressed: () {},
+                  child: const Text("Outlined"),
                 ),
-                Expanded(
-                  child: Container(
-                    color: Colors.red,
-                  ),
-                )
+                TextButton(
+                  onPressed: () {},
+                  child: const Text("Text"),
+                ),
               ],
             ),
           ),
         ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+        backgroundColor: Colors.red[400],
       ),
     );
   }
