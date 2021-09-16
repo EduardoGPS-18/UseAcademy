@@ -16,12 +16,26 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        drawer: const Drawer(),
         appBar: AppBar(
           title: const Text("Use Academy"),
           centerTitle: true,
+          actions: const [
+            Padding(
+              padding: EdgeInsets.only(right: 8.0),
+              child: Icon(Icons.book),
+            ),
+          ],
+          leading: const Icon(Icons.ac_unit),
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(
+              bottom: Radius.circular(15),
+            ),
+          ),
         ),
         backgroundColor: const Color.fromRGBO(255, 255, 255, 1),
         bottomNavigationBar: BottomNavigationBar(
+          
           currentIndex: 0,
           backgroundColor: Theme.of(context).primaryColor,
           selectedItemColor: const Color.fromRGBO(255, 255, 255, 1),
