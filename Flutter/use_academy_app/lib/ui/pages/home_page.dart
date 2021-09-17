@@ -7,20 +7,29 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        child: Container(
-          child: LayoutBuilder(
-            builder: (context, constraintsA) => Row(
-              children: [
-                Container(
-                  color: Colors.red,
-                  width: constraintsA.maxWidth * 70 / 100,
+        child: SizedBox(
+          height: 400,
+          child: ListView.separated(
+            scrollDirection: Axis.horizontal,
+            physics: const BouncingScrollPhysics(),
+            itemBuilder: (context, index) => Container(
+              color: Colors.blueGrey,
+              height: 300,
+              width: 300,
+              child: Text(
+                "$index",
+                style: const TextStyle(
+                  fontSize: 32,
+                  color: Colors.white,
                 ),
-                Container(
-                  color: Colors.blue,
-                  width: constraintsA.maxWidth * 30 / 100,
-                ),
-              ],
+              ),
+              alignment: Alignment.center,
             ),
+            separatorBuilder: (context, index) => const SizedBox(
+              height: 16,
+              width: 16,
+            ),
+            itemCount: 16,
           ),
         ),
       ),
