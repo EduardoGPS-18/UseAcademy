@@ -11,19 +11,13 @@ class HomePage extends StatelessWidget {
           child: SizedBox(
             width: 64,
             height: 64,
-            child: GridView.builder(
-              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 16,
-                mainAxisSpacing: 16,
-              ),
-              itemCount: 16,
-              physics: BouncingScrollPhysics(),
-              
-              itemBuilder: (ctx, i) => Container(
-                color: Colors.green,
-                child: Center(child: Text("$i")),
-              ),
+            child: IndexedStack(
+              index: 1,
+              children: [
+                Container(height: 300, width: 400, color: Colors.red),
+                Container(height: 300, width: 400, color: Colors.green),
+                Container(height: 300, width: 400, color: Colors.blue),
+              ],
             ),
           ),
         ),
