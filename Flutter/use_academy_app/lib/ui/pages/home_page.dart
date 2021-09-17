@@ -11,12 +11,32 @@ class HomePage extends StatelessWidget {
           child: SizedBox(
             width: 64,
             height: 64,
-            child: IndexedStack(
-              index: 1,
+            child: Stack(
+              alignment: Alignment.center,
               children: [
-                Container(height: 300, width: 400, color: Colors.red),
-                Container(height: 300, width: 400, color: Colors.green),
-                Container(height: 300, width: 400, color: Colors.blue),
+                Positioned(
+                  width: 200,
+                  height: 200,
+                  top: 0,
+                  left: 0,
+                  child: Container(
+                    color: Colors.yellow,
+                  ),
+                ),
+                ConstrainedBox(
+                  constraints: const BoxConstraints(
+                    maxWidth: 400,
+                    maxHeight: 400,
+                  ),
+                  child: Container(
+                    color: Colors.red,
+                  ),
+                ),
+                Container(
+                  height: 200,
+                  width: 150,
+                  color: Colors.blue,
+                ),
               ],
             ),
           ),
