@@ -9,23 +9,86 @@ class HomePage extends StatelessWidget {
       body: SafeArea(
         child: SizedBox.expand(
           child: Container(
-            child: ListView.separated(
-              itemBuilder: (context, index) => const ListTile(
-                title: Text("Título"),
-                subtitle: Text("Sub título"),
-                leading: CircleAvatar(
-                  child: Text("G"),
-                  backgroundImage: AssetImage('lib/assets/images/image01.jpeg'),
-                ),
-                trailing: Icon(Icons.edit),
-                tileColor: Colors.lightBlue,
-              ),
-              itemCount: 20,
-              separatorBuilder: (ctx, index) => const SizedBox(
-                height: 16,
-              ),
+            color: Colors.amber[300],
+            child: Column(
+              children: [
+                FirstContainer(),
+                SecondContainer(),
+              ],
             ),
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class SecondContainer extends StatefulWidget {
+  const SecondContainer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<SecondContainer> createState() => _SecondContainerState();
+}
+
+class _SecondContainerState extends State<SecondContainer> {
+  late String name;
+
+  @override
+  void initState() {
+    name = "Tulio";
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        color: Colors.green[100],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(name),
+            const SizedBox(width: 24),
+            ElevatedButton(
+              onPressed: () {
+                name = 'Marco';
+              },
+              child: const Text("Trocar nome"),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class FirstContainer extends StatelessWidget {
+  String name = "Dudu";
+
+  FirstContainer({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        color: Colors.blue[100],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(name),
+            const SizedBox(width: 24),
+            ElevatedButton(
+              onPressed: () {
+                name = 'Marco';
+                print(name);
+              },
+              child: Text("Trocar nome"),
+            ),
+          ],
         ),
       ),
     );
