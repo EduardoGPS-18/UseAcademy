@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'pages.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
@@ -11,7 +13,7 @@ class HomePage extends StatelessWidget {
           child: Container(
             color: Colors.amber[300],
             child: Column(
-              children: [
+              children: const [
                 FirstContainer(),
                 SecondContainer(),
               ],
@@ -21,6 +23,25 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+}
+
+class NavigateArguments {
+  final String routeName;
+  final Object? arguments;
+
+  NavigateArguments({required this.routeName, this.arguments});
+}
+
+class ProfileNavigateArguments extends RouteSettings {
+  @override
+  String name;
+  int age;
+  double height;
+  ProfileNavigateArguments({
+    required this.name,
+    required this.age,
+    required this.height,
+  });
 }
 
 class SecondContainer extends StatefulWidget {
@@ -33,12 +54,29 @@ class SecondContainer extends StatefulWidget {
 }
 
 class _SecondContainerState extends State<SecondContainer> {
+  late String text;
   late String name;
+  late int age;
 
   @override
   void initState() {
-    name = "Tulio";
+    name = "Eduardo";
+    age = 19;
     super.initState();
+  }
+
+  void goToProfilePage() {
+    var args = ProfileNavigateArguments(age: age, name: name, height: 1.70);
+    NavigateArguments navargs = NavigateArguments(routeName: '/profile', arguments: args);
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (ctx) => const ProfilePage(),
+        settings: RouteSettings(
+          name: '/profile',
+          arguments: navargs,
+        ),
+      ),
+    );
   }
 
   @override
@@ -46,16 +84,20 @@ class _SecondContainerState extends State<SecondContainer> {
     return Expanded(
       child: Container(
         color: Colors.green[100],
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(name),
-            const SizedBox(width: 24),
-            ElevatedButton(
-              onPressed: () {
-                name = 'Marco';
-              },
-              child: const Text("Trocar nome"),
+            Text("Nome: $name"),
+            Text("Nome: $age"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(width: 24),
+                ElevatedButton(
+                  onPressed: goToProfilePage,
+                  child: const Text("Profile page"),
+                ),
+              ],
             ),
           ],
         ),
@@ -65,9 +107,24 @@ class _SecondContainerState extends State<SecondContainer> {
 }
 
 class FirstContainer extends StatelessWidget {
-  String name = "Dudu";
+  final String text = "Profile page";
+  final String name = "Eduardo";
+  final int age = 19;
 
-  FirstContainer({
+  void goToProfilePage(BuildContext context) {
+    var args = ProfileNavigateArguments(age: age, name: name, height: 1.70);
+    NavigateArguments navargs = NavigateArguments(routeName: '/profile', arguments: args);
+
+    Navigator.of(context).push(MaterialPageRoute(
+      builder: (ctx) => const ProfilePage(),
+      settings: RouteSettings(
+        name: '/profile',
+        arguments: navargs,
+      ),
+    ));
+  }
+
+  const FirstContainer({
     Key? key,
   }) : super(key: key);
 
@@ -76,17 +133,20 @@ class FirstContainer extends StatelessWidget {
     return Expanded(
       child: Container(
         color: Colors.blue[100],
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(name),
-            const SizedBox(width: 24),
-            ElevatedButton(
-              onPressed: () {
-                name = 'Marco';
-                print(name);
-              },
-              child: Text("Trocar nome"),
+            Text("Nome: $name"),
+            Text("Nome: $age"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                const SizedBox(width: 24),
+                ElevatedButton(
+                  onPressed: () => goToProfilePage(context),
+                  child: const Text("Profile page"),
+                ),
+              ],
             ),
           ],
         ),
