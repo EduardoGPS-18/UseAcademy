@@ -17,11 +17,11 @@ class ProfilePage extends StatelessWidget {
                 const Text("Profile page"),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text(arguments.name),
+                  child: Text(user.name),
                 ),
                 Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Text("${arguments.age}"),
+                  child: Text("${user.age}"),
                 ),
                 ElevatedButton(
                   onPressed: () => Navigator.pop(context),
