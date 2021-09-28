@@ -1,0 +1,28 @@
+[34m7eb1a9b[31m (HEAD -> main, tag: Aula-05, origin/main) [37mfix: profile page variable name - [36mEduardo Silva, [32m6 days ago
+[34m77085e6[31m [37mfeat: added profile page - [36mEduardo Silva, [32m6 days ago
+[34mfc58d89[31m [37mfeat: function to navigate and navigate arguments - [36mEduardo Silva, [32m6 days ago
+[34m884d897[31m [37mfeat: stateless vs statefull widget - [36mEduardo Silva, [32m6 days ago
+[34m0892580[31m [37mfeat: using ListTile - [36mEduardo Silva, [32m6 days ago
+[34m2ed8665[31m (tag: Aula_05) [37mfeat: using Wrap - [36mEduardo Silva, [32m7 days ago
+[34m66834f7[31m [37mfeat: using ListView - [36mEduardo Silva, [32m7 days ago
+[34mece0e32[31m [37mfeat: using LayoutBuilder - [36mEduardo Silva, [32m7 days ago
+[34m9149998[31m [37mfeat: using Stack - [36mEduardo Silva, [32m7 days ago
+[34m06655a9[31m [37mfeat: using IndexedStack - [36mEduardo Silva, [32m7 days ago
+[34mc6f5e4b[31m [37mfeat: using GridView - [36mEduardo Silva, [32m7 days ago
+[34m9287511[31m [37mfeat: using FAB and buttons - [36mEduardo Silva, [32m7 days ago
+[34m87ac91d[31m [37mfeat: using expanded and flexible widgets - [36mEduardo Silva, [32m7 days ago
+[34m637063c[31m [37mfeat: added new rules to linter - [36mEduardo Silva, [32m7 days ago
+[34m14cb2f2[31m [37mfeat: using ConstrainedBox - [36mEduardo Silva, [32m7 days ago
+[34m0de28dd[31m [37mrefactor: move test page to stateless widget and use home page - [36mEduardo Silva, [32m7 days ago
+[34m42484e2[31m [37mfeat: home page - [36mEduardo Silva, [32m7 days ago
+[34m17d4ccc[31m [37mfeat: added images to test - [36mEduardo Silva, [32m7 days ago
+[34m6112e7b[31m [37mfeat: added body to scaffold with column and container - [36mEduardo Silva, [32m8 days ago
+[34m92a5cf6[31m [37mRevert "feat: added body to scaffold" - [36mEduardo Silva, [32m8 days ago
+[34m8f30af9[31m (tag: Aula-03) [37mfeat: added body to scaffold - [36mEduardo Silva, [32m8 days ago
+[34mad046ed[31m [37mfeat: addded actions and to appBar - [36mEduardo Silva, [32m8 days ago
+[34m0dae6c2[31m [37madded: Bottom bar navigation - [36mEduardo Silva, [32m8 days ago
+[34m3ffc0a4[31m [37mfeat: Flutter app created (initial commit) - [36mEduardo Silva, [32m8 days ago
+[34m75cd068[31m [37madded: day_2 code - [36mEduardo Silva, [32m9 days ago
+[34m8b86e36[31m (version_navigate) [37mfix: renamed the filename - [36mGitHub, [32m10 days ago
+[34m3c04733[31m [37mrefactor: file name (main to main_day_1) && added: day_1 code - [36mEduardo Silva, [32m10 days ago
+[34m42c5e28[31m (tag: Aula1) [37madded: main file - [36mEduardo Silva, [32m10 days ago
