@@ -12,12 +12,24 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class _HomePageState extends State<HomePage> with WidgetsBindingObserver {
+
   @override
   void initState() {
     widget.presenter.loadPersons();
-
+    
     super.initState();
+  }
+
+  @override
+  void dispose() {
+    
+    super.dispose();
+  }
+
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state) {
+    super.didChangeAppLifecycleState(state);
   }
 
   @override

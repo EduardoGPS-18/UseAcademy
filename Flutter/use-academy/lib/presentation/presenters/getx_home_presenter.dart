@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:flutter/foundation.dart';
 import 'package:get/get.dart';
 
 import '../../data/http/http.dart';
@@ -16,15 +15,22 @@ class GetxHomePresenter extends GetxController implements HomePresenter {
   });
 
   final Rx<List<PersonEntity>> _people = Rx([]);
-
+  
   Stream<List<PersonEntity>> get peopleStream => _people.stream;
+
+  @override
+  onReady() {
+    loadPersons();
+    super.onReady();
+  }
 
   Future<void> loadPersons() async {
     try {
       final List<PersonEntity> people = await loadPeople.loadPeople();
+
       _people.subject.add(people);
     } on HttpError catch (error) {
-      debugPrint(error.toString());
+      _people.subject.addError(error);
     }
   }
 }
