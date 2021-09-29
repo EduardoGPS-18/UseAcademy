@@ -29,4 +29,4 @@ flutter:
   uses-material-design: true
 
   assets:
-    - lib/assets/images/
+    - lib/ui/assets/images/
