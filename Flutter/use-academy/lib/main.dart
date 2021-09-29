@@ -1,4 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 
@@ -9,6 +11,11 @@ import 'ui/components/components.dart';
 import 'ui/pages/pages.dart';
 
 void main() async {
+  if (kDebugMode) {
+    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(false);
+  }
+  WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp();
   runApp(MyApp());
 }
